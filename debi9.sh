@@ -1,6 +1,6 @@
 #!/bin/bash
 #this script is created by stormTEAM for debian 9
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 dbhost='185.61.137.171';
 dbuser='stormvpv_bunoyuserdb';
@@ -40,11 +40,11 @@ Data:
 Version: 3 (0x2)
 Serial Number: 1 (0x1)
 Signature Algorithm: sha256WithRSAEncryption
-Issuer: C=PH, ST=Batangas, L=Batangas, O=SavageVPN, OU=SavageVPN, CN=savage-vpn.tk/name=server/emailAddress=savage99@gmail.com
+Issuer: C=ID, ST=JATIM, L=Kediri, O=JandaBaper, OU=JandaBaper, CN=sJandaBaper/name=server/emailAddress=jandabaper09@gmail.com
 Validity
-Not Before: Apr 20 04:53:44 2018 GMT
-Not After : Apr 17 04:53:44 2028 GMT
-Subject: C=PH, ST=Batangas, L=Batangas, O=SavageVPN, OU=SavageVPN, CN=savage-vpn.tk/name=server/emailAddress=savage99@gmail.com
+Not Before: Apr 26 04:53:44 2020 GMT
+Not After : Apr 17 04:53:44 2020 GMT
+Subject: C=ID, ST=JATIM, L=Kediri, O=JandaBaper, OU=JandaBaper, CN=sJandaBaper/name=server/emailAddress=jandabaper09@gmail.com
 Subject Public Key Info:
 Public Key Algorithm: rsaEncryption
 Public-Key: (2048 bit)
@@ -198,7 +198,7 @@ sleep 3
 
 #ready all required folders and files
 #set timezone
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 #disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 #remove all files in openvpn
@@ -453,7 +453,7 @@ socket = r:TCP_NODELAY=1
 client = no
 [squid]
 accept = 8888
-connect = 127.0.0.1:8080
+connect = 127.0.0.1:80
 [openssh]
 accept = 465
 connect = 127.0.0.1:22
@@ -528,13 +528,13 @@ http_access allow manager localhost
 http_access deny manager
 http_access allow localhost
 http_access deny all
-http_port 8080
+http_port 80
 coredump_dir /var/spool/squid3
 refresh_pattern ^ftp: 1440 20% 10080
 refresh_pattern ^gopher: 1440 0% 1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
 refresh_pattern . 0 20% 4320
-visible_hostname tsunaweak
+visible_hostname JandaBaper
 access_log       /etc/squid/log/access.log
 cache_access_log /etc/squid/log/cache_access.log
 cache_log        /etc/squid/log/cache.log
@@ -592,7 +592,7 @@ sleep 2
 echo "Installation Date: $date" >> install.txt
 echo "IP: $MYIP" >> /root/install.txt
 echo "OpenVPN PORT: 443" >> /root/install.txt
-echo "Squid Normal Port: 8080" >> /root/install.txt
+echo "Squid Normal Port: 80" >> /root/install.txt
 echo "Squid SSL Port: 8888" >> /root/install.txt
 echo "Privoxy Port: 8118" >> /root/install.txt
 echo "Dropbear Port 1: 225" >> /root/install.txt
@@ -603,7 +603,7 @@ echo "OpenSSH SSL Port: 465" >> /root/install.txt
 echo $date >> /root/install.txt
 cat /root/install.txt
 echo "======================================================="
-echo "Autoscript created by STORM-team"
+echo "Autoscript Mod by Janda Baper"
 echo "======================================================="
 history -c
 exit 0
