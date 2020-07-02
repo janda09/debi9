@@ -102,7 +102,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/janda09/install/master/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by JandaBaper</pre>" > /home/vps/public_html/index.html
+echo "<pre>Setup by Ipang Nett Nott</pre>" > /home/vps/public_html/index.html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/janda09/install/master/vps.conf"
 
 # install openvpn
@@ -368,6 +368,10 @@ echo 'echo -e "################################################" ' >> /etc/profi
 echo 'echo -e "" ' >> /etc/profile.d/janda.sh
 chmod +x /etc/profile.d/janda.sh
 
+# restaring stunnel4
+
+/etc/init.d/stunnel4 restart
+
 # remove unnecessary files
 apt -y autoremove
 apt -y autoclean
@@ -402,7 +406,7 @@ echo "Timezone : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
 echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Original Script by Fornesia, Rzengineer & Fawzya"  | tee -a log-install.txt
-echo "Modified by Janda Baper"  | tee -a log-install.txt
+echo "Mod by Janda Baper Group"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
