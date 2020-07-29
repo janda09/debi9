@@ -18,7 +18,7 @@ locality=KEDIRI
 organization=NOTT
 organizationalunit=NETT
 commonname=IPANG
-email=zuhriirfan09@gmail.com
+email=jandabaper09@gmail.com
 
 # configure rc.local
 cat <<EOF >/etc/rc.local
